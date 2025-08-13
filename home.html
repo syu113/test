@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      color: #111;
+      padding: 0 40px;
+    }
+    .header-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 32px 0 0 0;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .sns-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .sns-icons a {
+      color: #222;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .sns-icons a:hover {
+      color: #888;
+    }
+    .main-banner {
+      position: relative;
+      margin: 40px auto 30px auto;
+      max-width: 1200px;
+      min-height: 220px;
+      background: #f7f7f7;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-banner-bg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 7rem;
+      color: #eee;
+      font-weight: bold;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: 8px;
+      white-space: nowrap;
+    }
+    .main-banner-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+    .main-banner-left {
+      font-size: 2.2rem;
+      font-weight: bold;
+      line-height: 1.2;
+      max-width: 45%;
+    }
+    .main-banner-right {
+      font-size: 2.2rem;
+      font-weight: bold;
+      line-height: 1.2;
+      text-align: right;
+      max-width: 45%;
+    }
+    .desc-section {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 30px auto 0 auto;
+      gap: 40px;
+    }
+    .desc-ko, .desc-en {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #222;
+    }
+    .desc-ko {
+      text-align: left;
+    }
+    .desc-en {
+      text-align: right;
+    }
+    .project-section {
+      max-width: 1200px;
+      margin: 60px auto 80px auto;
+    }
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      margin-left: 4px;
+    }
+    .project-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      align-items: start;
+    }
+    .project-item {
+      width: 100%;
+      position: relative;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .project-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .project-item:nth-child(1) {
+      top: 1%;
+      transform: translateY(0px);
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .project-item:nth-child(1) img:first-child {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      z-index: 2;
+    }
+    .project-item:nth-child(1) img:nth-child(2) {
+      position: relative;
+      z-index: 1;
+    }
+    .project-item:nth-child(1) img:last-child {
+      position: absolute;
+      bottom: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      z-index: 2;
+    }
+    .project-item:nth-child(2) {
+      top: 1%;
+      transform: translateY(0px);
+      height: auto;
+      min-height: 450px;
+    }
+    .project-item:nth-child(3) {
+      transform: translateY(0px);
+      margin-top: 0px;
+    }
+    .project-item:nth-child(2) img:first-child {
+      position: relative;
+      z-index: 1;
+    }
+    .project-item:nth-child(2) img:last-child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: auto;
+      z-index: 2;
+    }
+    .project-item:nth-child(3) {
+      transform: translateY(0px);
+      align-self: end;
+    }
+    .project-item:nth-child(4) {
+      transform: translateY(0px);
+      align-self: end;
+    }
+    .project-info {
+      padding: 18px 16px 12px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-year {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .project-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .project-btn {
+      margin-top: 10px;
+      padding: 8px 0;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .project-btn:hover {
+      background: #444;
+    }
+    .footer {
+      background: #111;
+      color: #fff;
+      font-size: 0.95rem;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .footer-marquee {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .footer-marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+      font-weight: bold;
+      color: #FFD600;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    @media (max-width: 900px) {
+      body {
+        padding: 0 20px;
+      }
+      .main-banner-content, .desc-section, .footer-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 10px;
+      }
+      .main-banner-content {
+        padding: 30px 10px;
+      }
+      .footer-section {
+        align-items: stretch;
+      }
+      .footer-right {
+        align-items: flex-start;
+      }
+      .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .header-line {
+      border: none;
+      border-bottom: 2px solid #ddd;
+      margin: 8px 0 0 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header-wrap">
+    <nav class="header" aria-label="메인 네비게이션">
+      <div class="logo"><img src="util/logo.png" style="width: 400; height: 50px;"></div>
+      <div class="sns-icons">
+        <a href="home.html" title="Home"><img src="util/1.png" style="width: 48px; height: 48px;" alt="Home"></a>
+        <a href="about.html" title="About"><img src="util/2.png" style="width: 48px; height: 48px;" alt="About"></a>
+        <a href="work.html" title="Works"><img src="util/3.png" style="width: 48px; height: 48px;" alt="Works"></a>
+        <a href="contact.html" title="Contact"><img src="util/4.png" style="width: 48px; height: 48px;" alt="Contact"></a>
+        <a href="https://www.instagram.com/studiogivan?igsh=N2Jnb2IyZ2o5N25i" title="인스타그램"><img src="util/5.png" style="width: 48px; height: 48px;" alt="인스타그램"></a>
+      </div>
+    </nav>
+    <hr class="header-line">
+  </div>
+  <div class="main-banner">
+    <div class="main-banner-bg">givan</div>
+    <div class="main-banner-content">
+        <img src="HOME/2-7(gif).gif" style="width: 100%; height: 100%;">
+    </div>
+  </div>
+  <div class="desc-section">
+    <div class="desc-ko">
+      <img src="HOME/2-8.png" style="width: 100%; height: 100%;">
+    </div>
+    <div class="desc-en">
+      <img src="HOME/2-9.png" style="width: 100%; height: 100%;">
+    </div>
+  </div>
+  <div class="project-section">
+    <div class="project-list">
+        <div class="project-item">
+          <img src="HOME/2-11(상부 gif).gif">
+          <img src="HOME/2-10.png">
+          <img src="HOME/2-11(하부 gif).gif">
+        </div>
+        <div class="project-item">
+          <img src="HOME/2-12.png">
+          <img id="rotating-image" src="HOME/2-12-a.png" style="cursor: pointer;">
+        </div>
+        <div class="project-item">
+          <img src="HOME/2-13.png">
+        </div>
+        <div class="project-item">
+          <img src="HOME/2-14.png">
+        </div>
+    </div>
+  </div>
+     <div style="text-align: right; max-width: 1200px; margin: 20px auto 60px auto; cursor: pointer;" onclick="scrollToTop()">
+      <img src="HOME/2-15.png" style="width: 4%; height: 4%;">
+     </div>
+  
+  <div class="footer">
+    <div class="footer-marquee">
+      <img src="HOME/2-16(하부GIF).gif" style="width: 100%; height: 100%;">
+    </div>
+  </div>
+  <script>
+    // 이미지 순환을 위한 JavaScript
+    const imageData = [
+      { src: 'HOME/2-12-a.png', url: 'detail.html' },
+      { src: 'HOME/2-12-b.png', url: 'detail.html?project=b' },
+      { src: 'HOME/2-12-c.png', url: 'detail.html?project=c' },
+      { src: 'HOME/2-12-d.png', url: 'detail.html?project=d' },
+      { src: 'HOME/2-12-e.png', url: 'detail.html?project=e' },
+      { src: 'HOME/2-12-f.png', url: 'detail.html?project=f' },
+      { src: 'HOME/2-12-g.png', url: 'detail.html?project=g' },
+      { src: 'HOME/2-12-h.png', url: 'detail.html?project=h' }
+    ];
+    
+    let currentImageIndex = 0;
+    const rotatingImage = document.getElementById('rotating-image');
+    
+    function changeImage() {
+      currentImageIndex = (currentImageIndex + 1) % imageData.length;
+      rotatingImage.src = imageData[currentImageIndex].src;
+    }
+    
+    // 이미지 클릭 이벤트 추가
+    rotatingImage.addEventListener('click', function() {
+      window.location.href = imageData[currentImageIndex].url;
+    });
+    
+    // 3초마다 이미지 변경 (3000ms)
+    setInterval(changeImage, 3000);
+    
+    // 최상단으로 스크롤하는 함수
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>

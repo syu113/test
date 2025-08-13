@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen GIF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .fullscreen-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <a href="home.html">
+        <img src="index.gif" alt="Full Screen GIF" class="fullscreen-gif">
+    </a>
+</body>
+</html>
