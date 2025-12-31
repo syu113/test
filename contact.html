@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <title>CONTACT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1280">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
@@ -14,69 +15,83 @@
       color: #111;
       padding: 0 40px;
     }
+
     .header-wrap {
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       padding: 32px 0 0 0;
     }
+
     .logo {
       font-size: 2.2rem;
       font-weight: bold;
       letter-spacing: 1px;
     }
+
     .sns-icons {
       display: flex;
       gap: 16px;
       margin-top: 4px;
     }
+
     .sns-icons a {
       color: #222;
       font-size: 1.3rem;
       transition: color 0.2s;
     }
+
     .sns-icons a:hover {
       color: #888;
     }
+
     .header-line {
       border: none;
       border-bottom: 2px solid #ddd;
       margin: 8px 0 0 0;
       width: 100%;
     }
+
     .main {
       max-width: 1200px;
       margin: 40px auto 80px auto;
       padding: 0 12px;
     }
+
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       margin-bottom: 40px;
     }
+
     .contact-left {
       padding-right: 20px;
     }
+
     .contact-title {
       font-size: 1.1rem;
       font-weight: bold;
       margin-bottom: 8px;
       color: #111;
     }
+
     .contact-subtitle {
       font-size: 0.9rem;
       color: #666;
       margin-bottom: 30px;
       line-height: 1.5;
     }
+
     .form-group {
       margin-bottom: 20px;
     }
+
     .form-label {
       display: block;
       font-size: 0.9rem;
@@ -84,6 +99,7 @@
       color: #111;
       margin-bottom: 8px;
     }
+
     .form-input {
       width: 100%;
       padding: 12px 16px;
@@ -94,15 +110,18 @@
       transition: border-color 0.2s;
       box-sizing: border-box;
     }
+
     .form-input:focus {
       outline: none;
       border-color: #888;
       background: #fff;
     }
+
     .form-textarea {
       min-height: 100px;
       resize: vertical;
     }
+
     .submit-btn {
       background: #111;
       color: #fff;
@@ -116,16 +135,21 @@
       margin-top: 20px;
       float: right;
     }
+
     .submit-btn:hover {
       background: #333;
     }
+
     .contact-right {
       padding-left: 20px;
-      margin-top: 250px; /* 왼쪽 폼 제목과 정렬하기 위한 상단 여백 */
+      margin-top: 250px;
+      /* 왼쪽 폼 제목과 정렬하기 위한 상단 여백 */
     }
+
     .address-section {
       margin-bottom: 30px;
     }
+
     .address-title {
       font-size: 1rem;
       font-weight: bold;
@@ -133,18 +157,21 @@
       color: #111;
       text-align: right;
     }
+
     .address-content {
       font-size: 0.9rem;
       color: #666;
       line-height: 1.6;
       text-align: right;
     }
+
     .characters-section {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 40px;
     }
+
     .character-img {
       width: 80px;
       height: 80px;
@@ -157,6 +184,7 @@
       font-size: 2rem;
       font-weight: bold;
     }
+
     .footer {
       background: #111;
       color: #fff;
@@ -171,12 +199,14 @@
       align-items: center;
       overflow: hidden;
     }
+
     .footer-marquee {
       width: 100%;
       white-space: nowrap;
       overflow: hidden;
       box-sizing: border-box;
     }
+
     .footer-marquee span {
       display: inline-block;
       padding-left: 100%;
@@ -184,10 +214,18 @@
       font-weight: bold;
       color: #FFD600;
     }
+
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
     }
+
+    /* 모바일 반응형 스타일 제거 (PC 비율 유지)
     @media (max-width: 900px) {
       body {
         padding: 0 20px;
@@ -212,8 +250,10 @@
         font-size: 1.5rem;
       }
     }
+    */
   </style>
 </head>
+
 <body>
   <div class="header-wrap">
     <nav class="header" aria-label="메인 네비게이션">
@@ -222,22 +262,24 @@
         <a href="home.html" title="Home"><img src="util/1.png" style="width: 48px; height: 48px;" alt="Home"></a>
         <a href="about.html" title="About"><img src="util/2.png" style="width: 48px; height: 48px;" alt="About"></a>
         <a href="work.html" title="Works"><img src="util/3.png" style="width: 48px; height: 48px;" alt="Works"></a>
-        <a href="contact.html" title="Contact"><img src="util/4.png" style="width: 48px; height: 48px;" alt="Contact"></a>
-        <a href="https://www.instagram.com/studiogivan?igsh=N2Jnb2IyZ2o5N25i" title="인스타그램"><img src="util/5.png" style="width: 48px; height: 48px;" alt="인스타그램"></a>
+        <a href="contact.html" title="Contact"><img src="util/4.png" style="width: 48px; height: 48px;"
+            alt="Contact"></a>
+        <a href="https://www.instagram.com/studiogivan?igsh=N2Jnb2IyZ2o5N25i" title="인스타그램"><img src="util/5.png"
+            style="width: 48px; height: 48px;" alt="인스타그램"></a>
       </div>
     </nav>
     <hr class="header-line">
   </div>
-  
+
   <div class="main">
 
     <div class="contact-container">
       <!-- 왼쪽 연락처 폼 -->
       <div class="contact-left">
         <div class="contact-subtitle">
-            <img src="CONTACT/5-7.png" style="width: 218%; height: 100%;">
+          <img src="CONTACT/5-7.png" style="width: 218%; height: 100%;">
         </div>
-        
+
         <form id="contactForm">
           <div class="form-group">
             <label class="form-label">
@@ -245,30 +287,31 @@
             </label>
             <input type="text" class="form-input" id="name" name="name" required>
           </div>
-          
+
           <div class="form-group">
             <label class="form-label">
               <img src="CONTACT/5-9.png" style="width: 20%; height: 20%;">
             </label>
             <input type="text" class="form-input" id="company" name="company">
           </div>
-          
+
           <div class="form-group">
             <label class="form-label">
               <img src="CONTACT/5-10.png" style="width: 20%; height: 20%;">
             </label>
             <input type="email" class="form-input" id="email" name="email" required>
           </div>
-          
+
           <div class="form-group">
             <label class="form-label">MESSAGE</label>
-            <textarea class="form-input form-textarea" id="message" name="message" placeholder="프로젝트에 대한 상세한 내용을 작성해주세요."></textarea>
+            <textarea class="form-input form-textarea" id="message" name="message"
+              placeholder="프로젝트에 대한 상세한 내용을 작성해주세요."></textarea>
           </div>
-          
+
           <button type="submit" class="submit-btn">SUBMIT</button>
         </form>
       </div>
-      
+
       <!-- 오른쪽 주소 정보 -->
       <div class="contact-right">
         <div class="address-section">
@@ -279,45 +322,45 @@
             우편번호: 06234
           </div>
         </div>
-        
+
         <div class="address-section">
           <div class="address-title">PHONE</div>
           <div class="address-content">
             +82 2-1234-5678
           </div>
         </div>
-        
+
         <div class="address-section">
           <div class="address-title">E-MAIL</div>
           <div class="address-content">
             info@givan.co.kr
           </div>
         </div>
-        
-       
+
+
       </div>
     </div>
   </div>
-  
+
   <div class="footer">
     <div class="footer-marquee">
       <img src="HOME/2-16(하부GIF).gif" style="width: 100%; height: 100%;">
     </div>
   </div>
-  
+
   <script>
     // EmailJS 초기화 (실제 사용시 EmailJS에서 발급받은 Public Key로 교체)
     emailjs.init("YOUR_PUBLIC_KEY");
-    
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       // 버튼 상태 변경
       const submitBtn = document.querySelector('.submit-btn');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = '전송 중...';
       submitBtn.disabled = true;
-      
+
       // 폼 데이터 수집
       const templateParams = {
         from_name: document.getElementById('name').value,
@@ -326,22 +369,22 @@
         message: document.getElementById('message').value,
         to_email: 'lim618336@gmail.com'
       };
-      
+
       // EmailJS로 메일 전송 (데모용 - 실제로는 EmailJS 설정 필요)
       // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-      
+
       // 데모용 시뮬레이션
       setTimeout(() => {
         alert('메일이 성공적으로 전송되었습니다!');
-        
+
         // 폼 초기화
         document.getElementById('contactForm').reset();
-        
+
         // 버튼 상태 복원
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }, 2000);
-      
+
       // 실제 EmailJS 사용시 위의 setTimeout 부분을 삭제하고 아래 코드 사용:
       /*
       emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
@@ -361,4 +404,5 @@
     });
   </script>
 </body>
+
 </html>
