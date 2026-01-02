@@ -44,32 +44,28 @@
 </head>
 
 <body>
-    <img src="index.gif" alt="Full Screen GIF" class="fullscreen-gif" id="gifImage">
-    <div class="loading-text">Loading...</div>
+    <video src="index.mp4" autoplay muted class="fullscreen-gif" id="introVideo"></video>
     
     <script>
-        // GIF 재생 시간 설정 (밀리초 단위)
-        const GIF_DURATION = 14000; // 14초 (실제 GIF 길이에 맞춰 설정)
+        // 비디오 요소 가져오기
+        const introVideo = document.getElementById('introVideo');
         
-        // GIF 로드 완료 후 타이머 시작
-        const gifImage = document.getElementById('gifImage');
-        
-        gifImage.addEventListener('load', function() {
-            // GIF가 끝나면 자동으로 home.html로 이동
-            setTimeout(function() {
-                window.location.href = 'home.html';
-            }, GIF_DURATION);
+        // 비디오가 끝나면 자동으로 home.html로 이동
+        introVideo.addEventListener('ended', function() {
+            window.location.href = 'home.html';
         });
         
         // 클릭 시에도 즉시 이동 가능
-        gifImage.addEventListener('click', function() {
+        introVideo.addEventListener('click', function() {
             window.location.href = 'home.html';
         });
         
-        // 페이지 로드 시 즉시 타이머 시작 (이미지 로드 이벤트가 안 될 경우 대비)
-        setTimeout(function() {
-            window.location.href = 'home.html';
-        }, GIF_DURATION + 1000); // 1초 여유시간 추가
+        // 비디오 로드 에러 시 안전장치 (10초 후 강제 이동)
+        introVideo.addEventListener('error', function() {
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 10000);
+        });
     </script>
 </body>
 
